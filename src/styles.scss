@@ -1,0 +1,642 @@
+$titleFont: 'Gayathri', sans-serif;
+$pFont: 'Open Sans', sans-serif;
+$nFontColor: #17252a;
+@mixin for-size($size){
+    @if $size == tablet{
+        @media (min-width: 700px){@content;}
+    }@else if $size == desktop{
+        @media (min-width: 1000px){@content;}
+    }@else if $size == phone{
+        @media (max-width: 700px){@content;}
+    }
+}
+
+
+*{
+    margin: 0;
+    padding:0;
+}
+.nav{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2b7A7A;
+    position: fixed;
+    z-index: 20;
+    p{
+        display: none;
+        @include for-size(desktop){
+            display: block;
+            font-size: 2.5em;
+            font-family: $pFont;
+            color: $nFontColor;
+        }
+    }
+    @include for-size(tablet){
+        height: 12vh;
+    }
+    
+}
+.logoContainer{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-image: url("./assets/logo.jpg");
+    background-position: center;
+    background-size: cover;
+    @include for-size(tablet){
+        height: 175px;
+        width: 175px;
+    }
+}
+.navLinks{
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    a{
+        text-decoration: none;
+        margin-left: 15px;
+        color: #17252a;
+        font-size: 1.9em;
+        font-family: $pFont;
+        @include for-size(desktop){
+            font-size: 2.3em;
+        }
+    }
+
+}
+.homeHero{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(60, 56, 59, 0.73)),url("https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include for-size(tablet){
+        height: 500px;
+    }
+    @include for-size(desktop){
+        height: 700px;
+    }
+    h3{
+        color: #def2f1;
+        font-family: $titleFont;
+        font-size: 1.2em;
+        z-index: 1;
+        @include for-size(tablet){
+            font-size: 2.5em;
+        }
+        @include for-size(desktop){
+            font-size: 3em;
+        }
+        // margin-top: 50px;
+    }
+}
+
+
+.lvp{
+    background-color: #3aafa9;
+    width: 100vw;
+    position: absolute;
+    z-index: 0;
+    height: 360px;
+    padding-bottom: 100px;
+    @include for-size(tablet){
+        height: 700px;
+        padding-bottom: 200px;
+        
+    }
+    @include for-size(desktop){
+        height: 1000px;
+        padding-bottom: 450px;
+        br{
+            display: none;
+        }
+    }
+
+    p{
+        font-family: $pFont;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: $nFontColor;
+        @include for-size(tablet){
+            font-size: 2.2em;
+        }
+        @include for-size(desktop){
+            font-size: 2.6em;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        span{
+            color: #FEFFFF;
+        }
+    }
+    
+    h3{
+        font-family: $titleFont;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 20px !important;
+        color: $nFontColor;
+        z-index: 5;
+        @include for-size(tablet){
+            font-size: 3em;
+        }
+        
+
+    }
+    
+}
+.innerLvp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    background-color: #def2f1;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    @include for-size(tablet){
+        height: 25em;
+    }
+    @include for-size(desktop){
+        height: 40em;
+    }
+    h4,h5{
+        font-family: $titleFont;
+        // margin-bottom: 15px;
+        @include for-size(tablet){
+            font-size: 2em;
+        }
+
+    }
+    
+    
+}
+.offerings{
+    z-index: 3;
+    background-color: #3aafa9;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 450px;
+    position: relative;
+    @include for-size(tablet){
+        margin-top: 800px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include for-size(desktop){
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 1000px;
+    }
+    
+   
+}
+.product{
+    color: white;
+    font-family: $pFont;
+    width: 200px;
+    height: 175px;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    @include for-size(tablet){
+        height: 275px;
+        width: 260px;
+        font-size: 2em;
+    }
+    
+    &.one{
+        background-image: url("https://lumberliquidators.scene7.com/is/image/LumberLiquidators/250x250/Dream%20Home-7mm%20Ebb%20Tide%20Oak%20Laminate%20Flooring~10041610_sw.jpg");
+        margin-top: 50px;
+    }
+    &.two{
+        background-image: url("https://i1.adis.ws/i/flooranddecor/100136795_concrete-gray-ceramic-tile_main?w=500&h=500");
+        background-size: cover;
+        background-position: center;
+    }
+    &.three{
+        background-image: url("https://i1a.adis.ws/i/flooranddecor/942700671_natural-oak-smooth-solid-hardwood_main?$parade230$&fmt=jpg&fmt.jpeg.interlaced=true&qlt=85");
+        background-size: cover;
+        background-position: center;
+    }
+    &.four{
+        background-image: url("https://citytile.net/wp-content/uploads/2017/05/empeiria_panw_apo_30_xronia.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    &.five{
+        background-image: url("https://www.spectracf.com/wp-content/uploads/2018/05/Linoleum-1.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    &.six{
+        background-image: url("http://www.flooring.net/images/stone-tile-flooring.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
+.reviews{
+    width: 100vw;
+    height: 400px;
+    background-color: white;
+    @include for-size(tablet){
+        height: 780px;
+        p{
+            font-size: 1.8em;
+        }
+    }
+    @include for-size(desktop){
+        height: 980px;
+        p{
+            font-size: 2.2em;
+        }
+    }
+    h3{
+        font-family: $pFont;
+        color: $nFontColor;
+        text-align: center;
+        margin-bottom: 20px;
+        @include for-size(tablet){
+            font-size: 2em;
+            margin-top: 25px;
+            margin-bottom: 40px;
+        }
+        @include for-size(desktop){
+            font-size: 2.3em;
+            margin-top: 50px;
+            margin-bottom: 120px;
+        }
+    }
+
+
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    height: 180px;
+    width: 100%;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-family: $pFont;
+    color:$nFontColor;
+    @include for-size(tablet){
+        height: 340px;
+    }
+    @include for-size(desktop){
+        height: 400px;
+        justify-content: space-evenly;
+    }
+}
+.bottom{
+    background:#3aafa9;
+    padding: 10px;
+    position: relative;
+    color: white;
+    font-family: $pFont;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include for-size(tablet){
+        padding-bottom: 100px;
+    }
+    @include for-size(desktop){
+        padding-bottom: 200px;
+        justify-content: space-evenly;
+    }
+    
+    &:before {
+      transform: skewY(-4deg);
+      transform-origin: 100% 0;
+      position: absolute;
+      background: inherit; // Make this inherit if we want the same color as the parent div. For our purposes here, we will overwrite it with a different color to be able to easily see where the pseudo element is.
+      // background: #041F37;
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: -30px;
+      height: 30px; // height and top will usually be the same
+      z-index: 5;
+      -webkit-backface-visibility: hidden; // this fixes an issue with Chrome on some PCs
+      backface-visibility: hidden;
+      @include for-size(tablet){
+        transform: skewY(-4deg);
+        top:-80px;
+        height:80px;
+      }
+      @include for-size(desktop){
+        transform: skewY(-2deg);
+        top: -60px;
+        height: 60px;
+      }
+    }
+}
+.customer{
+    height: 170px;
+    width:150px;
+    border-radius: 50%;
+    font-family: $pFont;
+    @include for-size(tablet){
+        height: 260px;
+        width: 240px;
+    }
+    @include for-size(desktop){
+        height: 350px;
+        width: 350px;
+    }
+    &.one{
+        background-image: url("http://advancingyourhealth.org/cosmetic/files/2015/10/happy-lady.jpg");
+        background-size: cover;
+        background-position: center;
+        margin-right: 30px;
+        @include for-size(tablet){
+            margin-bottom: 20px;
+        }
+    }
+    &.two{
+        background-image: url("https://images.unsplash.com/photo-1457367756802-2c6127b8ad11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+        background-size: cover;
+        background-position: center ;
+        background-position-y: 10%;
+        margin-left: 60px;
+      
+    }
+}
+.textHolder{
+    width: 40%;
+    
+}
+.aboutPage{
+    height: 900px;
+    width: 100vw;
+    background-color: #3aafa9;
+    // display: flex;
+    // justify-content: center;
+    z-index: 5;
+    @include for-size(tablet){
+        height: 1600px;
+    }
+    @include for-size(desktop){
+        height: 1900px;
+    }
+}
+.aboutHero{
+    height: 320px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(60, 56, 59, 0.73)),url("https://st2.depositphotos.com/1035350/11777/i/450/depositphotos_117778266-stock-photo-knoxville-tennessee-skyline.jpg");
+    background-size: cover;
+    background-position: center;
+    @include for-size(tablet){
+        height: 500px;
+    }
+    @include for-size(desktop){
+        height: 700px;
+    }
+    h3{
+        font-family: $titleFont;
+        color: white;
+        margin-top: 140px;
+        font-size: 1.2em;
+        @include for-size(tablet){
+            font-size: 2.5em;
+        }
+        @include for-size(desktop){
+            font-size: 3em;
+        }
+    }
+
+}
+.innerAbout{
+    height: 550px;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    // position: relative;
+    background-color:white;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
+    line-height: 1.4em;
+    color: $nFontColor;
+    @include for-size(tablet){
+        height: 1000px;
+        margin-top: 50px;
+    }
+    
+    h4{
+        font-family: $titleFont;
+        font-size: 1.3em;
+        color: $nFontColor;
+        @include for-size(tablet){
+            font-size: 2.5em;
+        }
+    }
+    p{
+        font-family: $pFont;
+        font-size: .8em;
+        @include for-size(tablet){
+            font-size: 2em;
+            line-height: 40px;
+        }
+        @include for-size(desktop){
+            font-size: 2.3em;
+            line-height: 60px;
+        }
+    }
+}
+.insuredContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    @include for-size(desktop){
+        flex-direction: row;
+
+    }
+}
+.insuredLogo{
+    background-image: url("http://foothilllockandkey.com/wp-content/uploads/2015/07/insured.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    @include for-size(tablet){
+        height: 220px;
+        width: 220px;
+    }
+
+}
+.contactPage{
+    height: 500px;
+    width: 100vw;
+    background-color: #3aafa9;
+    @include for-size(tablet){
+        height: 1000px;
+    }
+    @include for-size(desktop){
+        height: 1500px;
+    }
+}
+.contactHero{
+    height: 300px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(60, 56, 59, 0.73)),url("https://printamanual.com/wp-content/uploads/edd/flooring.png");
+    background-size: cover;
+    background-position: center;
+    @include for-size(tablet){
+        height: 500px;
+
+    }
+    @include for-size(desktop){
+        height: 700px;
+    }
+    h3{
+        font-family: $titleFont;
+        color: white;
+        margin-top: 140px ;
+        font-size: 1.2em;
+        @include for-size(tablet){
+            font-size: 2.5em;
+        }
+    }
+
+}
+.contactInner{
+    height: 250px;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    // margin-top: 200px;
+    position: absolute;
+    @include for-size(tablet){
+        height: 600px;
+    }
+    @include for-size(desktop){
+        height: 900px;
+    }
+    h3{
+        font-family: $titleFont;
+        color: #2b7A7A;
+        @include for-size(tablet){
+            font-size: 2.5em;
+        }
+    }
+    p{
+        font-family: $pFont;
+        color: $nFontColor;
+        @include for-size(tablet){
+            font-size: 2em;
+        }
+    
+    }
+    input{
+        border-color: #3aafa9;
+        height: 1.6em;
+        border-radius: 4px;
+        text-align: center;
+        @include for-size(tablet){
+            height: 3em;
+            width: 15em;
+            font-size: 2em;
+            border: 6px ridge #3aafa9;
+            border-radius: 8px;
+        }
+    }
+    button{
+        border: 3px ridge #3aafa9;
+        font-family: $pFont;
+        margin-left: 5px;
+        @include for-size(tablet){
+            height: 2em;
+            width: 8em;
+            font-size: 2em;
+            border: 5px ridge #3aafa9;
+            border-radius: 11px;
+        }
+
+    }
+    
+}
+.footer{
+    height: 250px;
+    width: 100vw;
+    background-color: #2b7A7A;
+    padding-top: 60px;
+    @include for-size(tablet){
+        padding-top: 300px;
+        height: 500px;
+    }
+    h2{
+        font-family: $titleFont;
+        text-align: center;
+        color: white;
+        @include for-size(tablet){
+            font-size: 3.5em;
+            top: -70px;
+            position: relative;
+        }
+    }
+    span{
+        color: $nFontColor;
+        margin-top: 15px;
+    }
+}
+.contactContainer{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    @include for-size(tablet){
+        height: 65%;
+        margin-bottom: 30px;
+        justify-content: space-between;
+    }
+   .aOne{
+        margin-right: 20px;
+        color: #4B0082;
+        @include for-size(tablet){
+            font-size: 2em;
+        }
+        
+   }
+   .aTwo{
+       margin-left: 20px;
+       color: #4B0082;
+       @include for-size(tablet){
+           font-size: 2em;
+       }
+   }
+   p{
+       font-family: $pFont;
+       @include for-size(tablet){
+           font-size: 2.5em;
+       }
+       &:nth-child(3){
+           color: white;
+       }
+   }
+
+}
