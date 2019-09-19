@@ -16,8 +16,8 @@ const Home = props => {
                 <div className="innerLvp">
                     <h4>We Sell and Install Quality Luxury Vinyl at an Affordable Price</h4>
                     <h5>No matter the size of the job, we take care of our customers the same</h5>
-                    <p>We always reccomend our customers choose LVP for several reasons. This is a product we sell, know, and trust. </p>
-                    <button>click for more info </button>
+                    <p>We typically recommend our customers choose LVP. It is the most durable and affordable flooring on the market! Luxury vinyl plank is 100% waterproof, pet proof, scratch resistant and very quiet! </p>
+                    
                 </div>
                 <h3>We also install the following materials</h3>
             </section>

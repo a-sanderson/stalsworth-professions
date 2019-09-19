@@ -7,7 +7,7 @@ const Footer = props => {
         <main className="footer">
             <h2><span>Check us Out</span><br></br>Get in Touch</h2>
             <div className="contactContainer">
-                <p>865-555-5555</p>
+                <p>(865)201-3888</p>
                 <div>
                    <a className="aOne" href="https://www.facebook.com/Stalsworth-Professions-184762355509198/">
                     <FontAwesomeIcon icon={faFacebook} size="3x" />
