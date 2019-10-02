@@ -12,7 +12,7 @@ class Contact extends Component {
             squareFeet: e.target.value
         })
     }
-    handleSubmit = e => {
+    handleClick = e => {
         alert(`You are quoted for $${Math.floor(this.state.squareFeet * 4)} USD`)
     }
     render(){
@@ -24,7 +24,7 @@ class Contact extends Component {
                 <section className="contactInner">
                     <h3>Get an instant quote on our LVP below </h3>
                     <p style={{fontStyle: "italic"}}>Quote includes installation costs</p>
-                    <form onSubmit={this.handleSubmit} >
+                    <form  >
                         <input
                            type="number"
                             name="feet"
@@ -32,7 +32,7 @@ class Contact extends Component {
                             value={this.state.squareFeet}
                             onChange={this.handleChange} />
 
-                        <button>Submit</button>
+                        <button onClick={this.handleClick}>Submit</button>
 
                     </form>
                     <p style={{textAlign: "center"}}>For any questions regarding our other services or upgrades please call (865)-201-3888 or send an email to stalsworthprofessions@gmail.com today!</p> 
